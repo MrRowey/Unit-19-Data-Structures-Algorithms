@@ -1,6 +1,9 @@
 ```c#
-
-// Person Structure
+namespace DataStructure
+{
+    internal class Program
+    {
+        // Person Structure
         struct Player
         {
             private int LocY;
@@ -87,10 +90,9 @@
             }
 
             // Setting all the details of the tank
-            public int setTankDetails(int armor, int speed, int damage, int weight, int capacity)
+            public int setTankDetails(int armor, int damage, int weight, int capacity)
             {
                 this.Armor = armor;
-                this.Speed = speed;
                 this.Damage = damage;
                 this.Weight = weight;
                 this.Capacity= capacity;
@@ -114,12 +116,13 @@
             }
 
             // Speed is detamins by the Weight of the tank
-            public int setSpeed()
+            public int setMaxSpeed()
             {
-                int s = this.Speed;
+                Console.WriteLine("Set Max Speed");
+                int max = Convert.ToInt32(Console.ReadLine());
                 int w = this.Weight;
 
-                return Speed = s * w / 3 ;
+                return Speed = max * w / 3 ;
             }
 
             // Caculates the Damges to the tank armor
@@ -138,23 +141,17 @@
         {
             Tank t = new Tank();
 
-
             t.getTankDetials();
 
-            t.setTankDetails(100, 2, 3, 4, 5);
-
-            t.getTankDetials();
-
-            t.canFire();
-
-            t.setSpeed();
+            t.setTankDetails(100, 10, 20, 6);
 
             t.dmgToArmor();
 
             t.getTankDetials();
 
-
             Console.ReadKey();
         }
     }
+}
+
 ```
